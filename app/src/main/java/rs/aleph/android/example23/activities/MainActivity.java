@@ -174,12 +174,13 @@ public class MainActivity extends AppCompatActivity implements OnProductSelected
                 startService(intent);
                 break;
             case R.id.action_add:
-                try {
+
+                /*try {
                     Toast.makeText(MainActivity.this, "Sinhronizacija pokrenuta u glavnoj niti. Nije dobro :(",Toast.LENGTH_SHORT).show();
                     Thread.sleep(6000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
+                }*/
                 break;
         }
 
@@ -297,6 +298,7 @@ public class MainActivity extends AppCompatActivity implements OnProductSelected
         //registracija jednog filtera
         IntentFilter filter = new IntentFilter();
         filter.addAction("SYNC_DATA");
+        filter.addAction("COMMENT_REACTION");
         registerReceiver(sync, filter);
     }
 
